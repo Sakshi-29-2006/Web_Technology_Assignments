@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Care Tracker</title>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container navbar">
+            <div class="logo">
+                <i class="fa-solid fa-leaf"></i>
+                <span>PlantCare</span>
+            </div>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#add-plant">Add Plant</a>
+                <a href="#my-plants">My Plants</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <div>
+                <p class="small-title">
+                    <i class="fa-solid fa-seedling"></i>
+                    SIMPLE PLANT CARE
+                </p>
+                <h1>
+                    Take care of your
+                    <span>green friends.</span>
+                </h1>
+
+                <p class="hero-text">
+                    Keep track of your plants, watering schedules
+                    and plant care in one simple place.
+                </p>
+
+                <a href="#add-plant" class="button">
+                    <i class="fa-solid fa-plus"></i>
+                    Add Your Plant
+                </a>
+
+            </div>
+
+            <div class="hero-icon">
+                <i class="fa-solid fa-seedling"></i>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ADD PLANT -->
+
+    <section class="add-section" id="add-plant">
+        <div class="container">
+            <div class="section-heading">
+                <p class="small-title">ADD A PLANT</p>
+                <h2>Plant Information</h2>
+                <p>
+                    Enter the details of your plant below.
+                </p>
+            </div>
+
+
+            <form id="plantForm">
+                <div class="form-grid">
+                    <!-- Plant Name -->
+                    <div class="form-group">
+                        <label for="plantName">
+                            Plant Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="plantName"
+                            placeholder="Example: Aloe Vera"
+                        >
+                        <small class="error" id="plantNameError"></small>
+                    </div>
+
+
+                    <!-- Plant Type -->
+
+                    <div class="form-group">
+                        <label for="plantType">
+                            Plant Type
+                        </label>
+                        <select id="plantType">
+                            <option value="">
+                                Select plant type
+                            </option>
+
+                            <option value="Indoor">
+                                Indoor
+                            </option>
+
+                            <option value="Outdoor">
+                                Outdoor
+                            </option>
+
+                            <option value="Succulent">
+                                Succulent
+                            </option>
+
+                            <option value="Flowering">
+                                Flowering
+                            </option>
+
+                            <option value="Herb">
+                                Herb
+                            </option>
+                        </select>
+                        <small class="error" id="plantTypeError"></small>
+                    </div>
+
+                    <!-- Last Watered -->
+                    <div class="form-group">
+                        <label for="lastWatered">
+                            Last Watered
+                        </label>
+
+                        <input
+                            type="date"
+                            id="lastWatered"
+                        >
+                        <small class="error" id="dateError"></small>
+                    </div>
+
+                    <!-- Watering Interval -->
+                    <div class="form-group">
+                        <label for="wateringInterval">
+                            Water Every (Days)
+                        </label>
+
+                        <input
+                            type="number"
+                            id="wateringInterval"
+                            placeholder="Example: 5"
+                            min="1"
+                        >
+                        <small class="error" id="intervalError"></small>
+                    </div>
+
+
+                    <!-- Location -->
+                    <div class="form-group full-width">
+
+                        <label for="plantLocation">
+                            Plant Location
+                        </label>
+
+                        <input
+                            type="text"
+                            id="plantLocation"
+                            placeholder="Example: Bedroom window"
+                        >
+                        <small class="error" id="locationError"></small>
+                    </div>
+                </div>
+
+
+                <button type="submit" class="button">
+                    <i class="fa-solid fa-plus"></i>
+                    Add Plant
+                </button>
+            </form>
+        </div>
+
+    </section>
+
+
+    <!-- MY PLANTS -->
+
+    <section class="plants-section" id="my-plants">
+        <div class="container">
+
+            <div class="section-heading">
+                <p class="small-title">MY COLLECTION</p>
+                <h2>My Plants</h2>
+                <p>
+                    Keep track of your plants and their watering schedules.
+                </p>
+            </div>
+
+
+            <!-- Search and Filter -->
+
+            <div class="controls">
+
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search plants..."
+                    >
+
+                </div>
+
+
+                <select id="filterType">
+
+                    <option value="All">
+                        All Plants
+                    </option>
+
+                    <option value="Indoor">
+                        Indoor
+                    </option>
+
+                    <option value="Outdoor">
+                        Outdoor
+                    </option>
+
+                    <option value="Succulent">
+                        Succulent
+                    </option>
+
+                    <option value="Flowering">
+                        Flowering
+                    </option>
+
+                    <option value="Herb">
+                        Herb
+                    </option>
+
+                </select>
+            </div>
+
+            <!-- Plant Cards -->
+            <div id="plantList" class="plant-grid"></div>
+
+            <!-- No Plants Message -->
+            <div id="noPlants" class="no-plants">
+
+                <i class="fa-solid fa-leaf"></i>
+
+                <h3>No plants found</h3>
+                <p>
+                    Add your first plant to start tracking its care.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="container footer-content">
+            <div>
+                <div class="logo">
+                    <i class="fa-solid fa-leaf"></i>
+                    <span>PlantCare</span>
+                </div>
+
+                <p>
+                    A simple plant care tracker for your
+                    everyday green friends.
+                </p>
+            </div>
+
+
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#add-plant">Add Plant</a>
+                <a href="#my-plants">My Plants</a>
+            </div>
+        </div>
+
+
+        <div class="copyright">
+            <p>
+                &copy; <span id="currentYear"></span> PlantCare.
+                All rights reserved.
+            </p>
+        </div>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
