@@ -1,5 +1,5 @@
 
-/* ================= GENERAL ================= */
+/* GENERAL */
 
 * {
     box-sizing: border-box;
@@ -30,7 +30,7 @@ p {
 }
 
 
-/* ================= NAVBAR ================= */
+/* NAVBAR */
 
 .navbar-custom {
     background-color: rgba(255, 250, 244, 0.95);
@@ -63,7 +63,7 @@ p {
 }
 
 
-/* ================= HERO ================= */
+/* HERO */
 
 .hero {
     min-height: 92vh;
